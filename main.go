@@ -41,7 +41,7 @@ func New(ctx context.Context, next http.Handler, config *Config, _ string) (http
 
 		fullURL := scheme + "://" + host + uri
 
-		// set (not add) чтобы не накапливались дубли при повторных проксях
+		// set (not add)
 		r.Header.Set(config.HeaderName, fullURL)
 
 		next.ServeHTTP(rw, r)
@@ -53,7 +53,7 @@ func firstHeaderValue(h http.Header, key string) string {
 	if v == "" {
 		return ""
 	}
-	// на всякий случай режем "https, http" или "a,b"
+	
 	if i := strings.IndexByte(v, ','); i >= 0 {
 		v = v[:i]
 	}
