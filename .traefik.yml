@@ -1,6 +1,6 @@
-displayName: Request URL Header
+displayName: Full Request URL
 type: middleware
 import: github.com/akotlyar/plugin-request-x-url
-summary: Adds full request URL header
+summary: Adds full request URL (scheme, host, path, query) to request headers
 testData:
   headerName: X-Real-Url
